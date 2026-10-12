@@ -4,153 +4,838 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404DREAM | MENU</title>
+<title>404DREAM — Midnight Cafe</title>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+:root {
+  --night: #17162b;
+  --purple: #8273b9;
+  --lavender: #c9b9ed;
+  --cream: #ffe9bd;
+  --wood: #795044;
+  --gold: #f5c979;
+}
+
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   min-height: 100vh;
-  padding: 30px 16px;
-  color: #e5e2ff;
-  font-family: Georgia, serif;
-  background: radial-gradient(ellipse at top, #343064, #111329 70%);
+  background: #101020;
+  color: #fff0d8;
+  font-family: "Gowun Dodum", monospace;
+  image-rendering: pixelated;
 }
 
-.window {
-  max-width: 650px;
-  margin: 30px auto;
-  border: 1px solid #a49aff;
-  background: #17172b;
-  box-shadow: 0 0 25px #7566db44;
+button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
 }
 
-.bar {
-  padding: 10px 14px;
-  background: #6557a7;
-  color: white;
-  font: 13px monospace;
+.topbar {
+  padding: 12px 16px;
+  background: #25213d;
+  border-bottom: 3px solid #55466e;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
-.content {
-  padding: 28px 22px;
-  text-align: center;
+.topbar a {
+  color: #d8c5ff;
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 38px;
-  letter-spacing: 5px;
+  font-size: clamp(24px, 5vw, 40px);
+  letter-spacing: 4px;
+  margin: 22px 0 4px;
+  text-shadow: 3px 3px #614a8d;
 }
 
 .subtitle {
-  color: #aaa5d9;
-  font-size: 13px;
-}
-
-.notice {
-  margin: 25px 0;
-  color: #b9b4dd;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.menu-item {
-  display: block;
-  width: 100%;
-  margin: 14px 0;
-  padding: 18px;
-  color: #f0edff;
-  text-align: left;
-  font: inherit;
-  background: #252442;
-  border: 1px solid #655b9c;
-  cursor: pointer;
-}
-
-.menu-item:hover {
-  background: #37315e;
-  border-color: #c4b9ff;
-}
-
-.menu-item strong {
-  display: block;
-  margin-bottom: 8px;
+  color: #c7b9df;
+  font-size: 12px;
   letter-spacing: 2px;
 }
 
-.menu-item span {
-  color: #bcb6dc;
-  font-size: 13px;
+main {
+  width: min(100% - 24px, 900px);
+  margin: auto;
+  padding-bottom: 36px;
 }
 
-#message {
-  min-height: 50px;
+.heading { text-align: center; }
+
+/* SIDE-VIEW CAFE */
+
+.cafe {
+  position: relative;
+  height: 390px;
   margin-top: 22px;
-  color: #d5ccff;
-  line-height: 1.8;
-  font-size: 14px;
+  overflow: hidden;
+  border: 4px solid #76618c;
+  background: #29223c;
+  box-shadow: 0 0 24px #8273b933;
+  isolation: isolate;
 }
 
-a {
-  color: #c9c1ff;
-  font: 13px monospace;
+.wall {
+  position: absolute;
+  inset: 0 0 65px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 46px,
+      #ffffff08 47px 49px
+    ),
+    linear-gradient(#25243e, #44334c);
+  z-index: -3;
+}
+
+.stars {
+  position: absolute;
+  inset: 0 0 80px;
+  background-image:
+    radial-gradient(circle, #ffe9bd 1px, transparent 2px),
+    radial-gradient(circle, #b9b5ff 1px, transparent 2px);
+  background-size: 53px 47px, 79px 61px;
+  background-position: 7px 9px, 29px 20px;
+  opacity: .55;
+  animation: twinkle 4s steps(2) infinite;
+  z-index: -2;
+}
+
+@keyframes twinkle {
+  50% { opacity: .2; }
+}
+
+.window {
+  position: absolute;
+  top: 25px;
+  left: 7%;
+  width: 36%;
+  height: 150px;
+  border: 7px solid #654a58;
+  background:
+    radial-gradient(ellipse at 70% 70%, #f4d3a1 0 3%, transparent 4%),
+    radial-gradient(circle at 25% 25%, #fff0c7 0 2px, transparent 3px),
+    linear-gradient(155deg, #272c57, #65518b 65%, #e5a9a2);
+  box-shadow: inset 0 0 0 3px #c49a8c, 0 5px #17162b;
+}
+
+.window::before {
+  content: "";
+  position: absolute;
+  left: 48%;
+  top: 0;
+  height: 100%;
+  width: 7px;
+  background: #654a58;
+}
+
+.window::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 54%;
+  height: 7px;
+  width: 100%;
+  background: #654a58;
+}
+
+.moon {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #ffe8bb;
+  box-shadow: 0 0 18px #ffe8bb88;
+}
+
+.lamp {
+  position: absolute;
+  top: 12px;
+  left: 61%;
+  width: 50px;
+  height: 12px;
+  background: #5b4558;
+}
+
+.lamp::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 27px;
+  height: 27px;
+  background: #f5ce8a;
+  clip-path: polygon(25% 0,75% 0,100% 100%,0 100%);
+  filter: drop-shadow(0 0 12px #f5ce8a);
+}
+
+.counter {
+  position: absolute;
+  top: 105px;
+  right: 0;
+  width: 38%;
+  height: 100px;
+  background: #795044;
+  border-top: 9px solid #bd8b69;
+  border-bottom: 10px solid #432d37;
+}
+
+.counter::after {
+  content: "✦  404DREAM  ✦";
+  display: block;
+  text-align: center;
+  padding-top: 25px;
+  font-size: 10px;
+  color: #ffe4b5;
+  letter-spacing: 1px;
+}
+
+.shelf {
+  position: absolute;
+  right: 5%;
+  top: 40px;
+  width: 25%;
+  height: 7px;
+  background: #8b6258;
+}
+
+.jar {
+  position: absolute;
+  top: -27px;
+  width: 18px;
+  height: 24px;
+  background: #8b9bce;
+  border: 3px solid #d3c2eb;
+  box-shadow: 0 -5px #bb9b8b;
+}
+
+.jar:nth-child(1) { left: 12%; }
+.jar:nth-child(2) { left: 42%; background: #d89cbd; }
+.jar:nth-child(3) { left: 72%; background: #9eb9a9; }
+
+.floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 65px, #3d2938 66px 69px),
+    repeating-linear-gradient(0deg, #674451 0 28px, #815b5d 29px 32px);
+  border-top: 8px solid #bd8b69;
+}
+
+.table {
+  position: absolute;
+  bottom: 66px;
+  left: 14%;
+  width: 34%;
+  height: 13px;
+  background: #d5a076;
+  border-bottom: 5px solid #765044;
+}
+
+.table::before, .table::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 8px;
+  height: 48px;
+  background: #6b4442;
+}
+
+.table::before { left: 15%; }
+.table::after { right: 15%; }
+
+.chair {
+  position: absolute;
+  bottom: 72px;
+  left: 6%;
+  width: 34px;
+  height: 38px;
+  border: 7px solid #a26e62;
+  border-bottom: 0;
+}
+
+.chair::after {
+  content: "";
+  position: absolute;
+  bottom: -37px;
+  left: 6px;
+  width: 7px;
+  height: 37px;
+  background: #a26e62;
+}
+
+.cat {
+  position: absolute;
+  bottom: 18px;
+  right: 9%;
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px #a99be8);
+  cursor: pointer;
+  transition: transform .2s;
+  image-rendering: pixelated;
+}
+
+.cat:hover { transform: translateY(-5px); }
+
+.table-label {
+  position: absolute;
+  bottom: 14px;
+  left: 10%;
+  font-size: 10px;
+  color: #ffdfb0;
+  opacity: .8;
+}
+
+.drink {
+  display: none;
+  position: absolute;
+  bottom: 83px;
+  left: 26%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 34px;
+  filter: drop-shadow(0 0 10px #8bc8ff);
+  animation: arrive .8s steps(4);
+}
+
+.drink.show { display: block; }
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hint {
+  text-align: center;
+  font-size: 11px;
+  color: #c6b6df;
+  margin: 10px 0 20px;
+}
+
+.panel {
+  border: 2px solid #76618c;
+  background: #201c33;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #ffe4b5;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.menu-card {
+  background: #302742;
+  border: 2px solid #665278;
+  padding: 12px 5px;
+  min-height: 100px;
+  transition: .2s;
+}
+
+.menu-card:hover {
+  background: #4b3b60;
+  border-color: #e1c0ff;
+  transform: translateY(-2px);
+}
+
+.menu-card .emoji {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 7px;
+}
+
+.menu-card strong {
+  display: block;
+  font-size: 10px;
+  color: #f9dfb7;
+}
+
+.menu-card small {
+  display: block;
+  color: #c9b9df;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.status {
+  min-height: 20px;
+  color: #c8b8ef;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 8px;
+  color: #837797;
+  font-size: 10px;
+  line-height: 2;
+}
+
+/* POPUP */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: #080714d9;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.open { display: flex; }
+
+.dialog {
+  width: min(100%, 430px);
+  max-height: 88vh;
+  overflow-y: auto;
+  border: 3px solid #9b84ba;
+  background: #211c35;
+  box-shadow: 7px 7px 0 #080714;
+}
+
+.dialog-bar {
+  padding: 10px 12px;
+  background: #55436d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.close {
+  border: 0;
+  background: #33253f;
+  padding: 4px 10px;
+}
+
+.dialog-content { padding: 18px; }
+
+.dialog-content h2 {
+  color: #ffe5b7;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.dialog-content p {
+  line-height: 1.9;
+  font-size: 13px;
+  color: #e2d6ef;
+  white-space: pre-line;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.option {
+  border: 1px solid #806c9d;
+  background: #302742;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.option.selected {
+  background: #75608e;
+  border-color: #ffe5b7;
+}
+
+.action {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: #75608e;
+  border: 2px solid #b8a2d7;
+}
+
+.action:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.noise {
+  border: 1px dashed #b5a1d8;
+  background: repeating-linear-gradient(
+    0deg, #463752 0 2px, #282036 2px 4px
+  );
+  color: #fff0d8;
+  padding: 14px 8px;
+  width: 100%;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.mystery {
+  display: none;
+  border-left: 3px solid #a68ed5;
+  padding: 10px 12px;
+  margin-top: 12px;
+  background: #171427;
+  color: #d8c9f2;
+  font-size: 12px;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.mystery.show { display: block; }
+
+@media (max-width: 500px) {
+  .cafe { height: 330px; }
+  .window { height: 120px; }
+  .counter { top: 100px; height: 88px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-card {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+    padding: 10px;
+  }
+  .menu-card .emoji { margin: 0; }
+  .menu-card small { margin-top: 3px; }
 }
 </style>
 </head>
+
 <body>
+<div class="topbar">
+  <a href="index.html">← BACK TO ENTRANCE</a>
+  <span>OPEN 00:00 — 04:04</span>
+  <span>NO. 404</span>
+</div>
 
-<div class="window">
-  <div class="bar">404DREAM.exe — MENU</div>
+<main>
+  <header class="heading">
+    <h1>404DREAM</h1>
+    <div class="subtitle">A LITTLE WORLD BETWEEN DREAMS AND REALITY</div>
+  </header>
 
-  <div class="content">
-    <p class="subtitle">WELCOME, DREAMER.</p>
-    <h1>MENU</h1>
-    <p class="subtitle">오늘 밤, 무엇을 주문하시겠어요?</p>
+  <section class="cafe" aria-label="옆에서 바라보는 밤의 카페">
+    <div class="wall"></div>
+    <div class="stars"></div>
+    <div class="window"><div class="moon"></div></div>
+    <div class="lamp"></div>
 
-    <div class="notice">
-      모든 메뉴는 따뜻하게 준비됩니다.<br>
-      단, 주문자의 기억은 보관되지 않습니다.
+    <div class="shelf">
+      <div class="jar"></div>
+      <div class="jar"></div>
+      <div class="jar"></div>
     </div>
 
-    <button class="menu-item" onclick="choose('soda')">
-      <strong>✦ STAR NIGHT SODA</strong>
-      <span>별 모양 레몬 한 조각과 푸른 밤을 담은 소다.</span>
-    </button>
+    <div class="counter"></div>
+    <div class="floor"></div>
+    <div class="chair"></div>
+    <div class="table"></div>
 
-    <button class="menu-item" onclick="choose('parfait')">
-      <strong>✦ DREAM PARFAIT</strong>
-      <span>달콤한 기억을 층층이 쌓아 올린 파르페.</span>
-    </button>
+    <button class="drink" id="servedDrink"
+      aria-label="테이블 위 음료 살펴보기">🥤</button>
 
-    <button class="menu-item" onclick="choose('tea')">
-      <strong>✦ MOONLIGHT TEA</strong>
-      <span>오래된 꿈처럼 은은한 향이 남는 차.</span>
-    </button>
+    <div class="table-label" id="tableLabel">YOUR TABLE · 01</div>
 
-    <div id="message">
-      SYSTEM: 메뉴를 선택해 주세요.
-    </div>
+    <button class="cat" id="cat"
+      aria-label="검은 고양이 살펴보기">🐈‍⬛</button>
+  </section>
 
-    <p><a href="index.html">← BACK TO THE ENTRANCE</a></p>
+  <div class="hint">
+    ✦ 카페를 둘러보고, 메뉴를 고르고, 작은 이상함을 찾아보세요. ✦
   </div>
+
+  <section class="panel">
+    <h2>☾ TODAY'S MENU</h2>
+    <div class="menu-grid">
+      <button class="menu-card" data-menu="soda">
+        <span class="emoji">🥤</span>
+        <span>
+          <strong>STAR NIGHT SODA</strong>
+          <small>별 모양 레몬과 푸른 밤</small>
+        </span>
+      </button>
+
+      <button class="menu-card" data-menu="parfait">
+        <span class="emoji">🍨</span>
+        <span>
+          <strong>DREAM PARFAIT</strong>
+          <small>달콤한 기억을 쌓은 파르페</small>
+        </span>
+      </button>
+
+      <button class="menu-card" data-menu="tea">
+        <span class="emoji">🍵</span>
+        <span>
+          <strong>MOONLIGHT TEA</strong>
+          <small>오래된 꿈처럼 은은한 차</small>
+        </span>
+      </button>
+    </div>
+    <div class="status" id="status" aria-live="polite">
+      어서 오세요. 천천히 둘러보셔도 괜찮아요.
+    </div>
+  </section>
+
+  <footer>
+    PLEASE DO NOT LOOK FOR THE OWNER'S NAME.<br>
+    SOME MEMORIES ARE BETTER LEFT UNFOUND.
+  </footer>
+</main>
+
+<!-- ORDER POPUP -->
+<div class="overlay" id="orderOverlay">
+  <section class="dialog" role="dialog" aria-modal="true"
+    aria-labelledby="orderTitle">
+    <div class="dialog-bar">
+      <span>ORDER_MENU.exe</span>
+      <button class="close" data-close="orderOverlay">×</button>
+    </div>
+    <div class="dialog-content">
+      <h2 id="orderTitle">오늘의 메뉴</h2>
+      <p id="orderDescription"></p>
+      <p>마음에 드는 토핑을 골라주세요.</p>
+      <div class="options" id="toppingOptions"></div>
+      <button class="action" id="orderButton" disabled>
+        토핑을 선택해 주세요
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- SHORT STORY POPUP -->
+<div class="overlay" id="storyOverlay">
+  <section class="dialog" role="dialog" aria-modal="true"
+    aria-labelledby="storyTitle">
+    <div class="dialog-bar">
+      <span>MEMORY_FRAGMENT.txt</span>
+      <button class="close" data-close="storyOverlay">×</button>
+    </div>
+    <div class="dialog-content">
+      <h2 id="storyTitle">작은 이야기</h2>
+      <p id="storyText"></p>
+      <p style="color:#c4acd9;font-size:11px">
+        창을 닫으면 주문이 완료됩니다.
+      </p>
+      <button class="action" id="finishOrder">창 닫기 · 주문 완료</button>
+    </div>
+  </section>
+</div>
+
+<!-- DRINK DESCRIPTION POPUP -->
+<div class="overlay" id="drinkOverlay">
+  <section class="dialog" role="dialog" aria-modal="true"
+    aria-labelledby="drinkTitle">
+    <div class="dialog-bar">
+      <span>DRINK_DETAILS.exe</span>
+      <button class="close" data-close="drinkOverlay">×</button>
+    </div>
+    <div class="dialog-content">
+      <h2 id="drinkTitle">오늘의 음료</h2>
+      <p id="drinkDescription"></p>
+      <button class="noise" id="noiseButton">
+        ░▒▓ SIGNAL LOST ▓▒░<br>
+        CLICK TO RECONNECT
+      </button>
+      <div class="mystery" id="mysteryText"></div>
+    </div>
+  </section>
+</div>
+
+<!-- CAT POPUP -->
+<div class="overlay" id="catOverlay">
+  <section class="dialog" role="dialog" aria-modal="true">
+    <div class="dialog-bar">
+      <span>UNKNOWN_GUEST.exe</span>
+      <button class="close" data-close="catOverlay">×</button>
+    </div>
+    <div class="dialog-content">
+      <h2>은하</h2>
+      <p>
+        검은 고양이는 당신을 바라보다가 천천히 눈을 감았다.
+
+        목에는 아무런 이름표도 없다.
+        그런데 어째서인지, 당신을 기다리고 있었던 것 같다.
+      </p>
+    </div>
+  </section>
 </div>
 
 <script>
-function choose(menu) {
-  const message = document.getElementById("message");
-
-  if (menu === "soda") {
-    message.textContent =
-      "STAR NIGHT SODA — 오늘의 레몬은 별 모양입니다. 누군가 좋아했던 모양이거든요.";
-  } else if (menu === "parfait") {
-    message.textContent =
-      "DREAM PARFAIT — 토핑을 고르실 수 있어요. 어떤 이야기를 찾고 계신가요?";
-  } else {
-    message.textContent =
-      "MOONLIGHT TEA — 이 차를 마시면 꿈을 기억할 수 있을까요?";
+const menuData = {
+  soda: {
+    name: "STAR NIGHT SODA",
+    emoji: "🥤",
+    description: "별 모양 레몬 한 조각과 푸른 밤을 담은 소다.",
+    toppings: ["별 레몬", "은빛 별사탕", "달빛 얼음"],
+    story: "유리잔에 별이 부딪히는 소리가 났다.\n\n주인은 분명 웃고 있었는데, 잠깐 고개를 돌린 순간 표정이 기억나지 않았다.",
+    scent: "차가운 유리잔에 맺힌 물방울. 레몬 껍질의 상큼한 향과 한밤의 창문을 열었을 때처럼 서늘한 공기가 느껴진다.",
+    mystery: "기록 #001\n\n이곳에 처음 온다고 하셨죠.\n그런데 왜 당신이 좋아하는 모양을 알고 있을까요?\n\n[기록 일부가 손상되었습니다.]"
+  },
+  parfait: {
+    name: "DREAM PARFAIT",
+    emoji: "🍨",
+    description: "달콤한 기억을 층층이 쌓아 올린 파르페.",
+    toppings: ["별사탕", "복숭아 젤리", "구름 크림"],
+    story: "한 숟가락을 뜨자 오래전 여름의 냄새가 났다.\n\n분명 잊었다고 생각한 날이었다. 그런데 왜 이렇게 선명할까?",
+    scent: "바닐라와 복숭아의 달콤한 향. 어릴 적 여름날의 햇볕처럼 포근하고, 마지막에는 설명할 수 없는 그리움이 남는다.",
+    mystery: "기록 #002\n\n이 가게의 메뉴에는 기억이 들어가지 않습니다.\n\n적어도, 주인은 그렇게 말했습니다.\n\n[누군가 문장을 지웠습니다.]"
+  },
+  tea: {
+    name: "MOONLIGHT TEA",
+    emoji: "🍵",
+    description: "오래된 꿈처럼 은은한 향이 남는 차.",
+    toppings: ["달빛 설탕", "말린 꽃잎", "꿀 한 방울"],
+    story: "찻잔 위로 김이 천천히 올라왔다.\n\n그 모양이 꼭 누군가의 뒷모습 같아서, 당신은 한참 동안 잔을 내려놓지 못했다.",
+    scent: "은은한 꽃향기와 따뜻한 꿀 향. 오래된 책장을 넘길 때처럼 차분하고, 어딘가 익숙한 꿈의 잔향이 맴돈다.",
+    mystery: "기록 #003\n\n꿈은 깨어나면 사라집니다.\n그렇다면 이곳을 기억하지 못하는 손님들은...\n\n정말 꿈에서 깨어난 걸까요?\n\n[응답 없음.]"
   }
-}
-</script>
+};
 
+let selectedMenu = null;
+let selectedTopping = null;
+let servedMenu = null;
+
+const $ = id => document.getElementById(id);
+
+function openPopup(id) {
+  $(id).classList.add("open");
+}
+
+function closePopup(id) {
+  $(id).classList.remove("open");
+}
+
+document.querySelectorAll("[data-close]").forEach(button => {
+  button.addEventListener("click", () => {
+    closePopup(button.dataset.close);
+  });
+});
+
+document.querySelectorAll(".overlay").forEach(overlay => {
+  overlay.addEventListener("click", event => {
+    if (event.target === overlay) {
+      closePopup(overlay.id);
+    }
+  });
+});
+
+document.querySelectorAll("[data-menu]").forEach(button => {
+  button.addEventListener("click", () => {
+    selectedMenu = menuData[button.dataset.menu];
+    selectedTopping = null;
+
+    $("orderTitle").textContent = selectedMenu.name;
+    $("orderDescription").textContent = selectedMenu.description;
+    $("orderButton").disabled = true;
+    $("orderButton").textContent = "토핑을 선택해 주세요";
+
+    const container = $("toppingOptions");
+    container.replaceChildren();
+
+    selectedMenu.toppings.forEach(topping => {
+      const option = document.createElement("button");
+      option.className = "option";
+      option.textContent = topping;
+
+      option.addEventListener("click", () => {
+        selectedTopping = topping;
+
+        container.querySelectorAll(".option").forEach(item => {
+          item.classList.remove("selected");
+        });
+
+        option.classList.add("selected");
+        $("orderButton").disabled = false;
+        $("orderButton").textContent = "이 메뉴로 주문하기";
+      });
+
+      container.appendChild(option);
+    });
+
+    openPopup("orderOverlay");
+  });
+});
+
+$("orderButton").addEventListener("click", () => {
+  if (!selectedMenu || !selectedTopping) return;
+
+  $("storyTitle").textContent = selectedMenu.name;
+  $("storyText").textContent =
+    selectedMenu.story + "\n\n선택한 토핑: " + selectedTopping;
+
+  closePopup("orderOverlay");
+  openPopup("storyOverlay");
+});
+
+$("finishOrder").addEventListener("click", () => {
+  if (!selectedMenu) return;
+
+  servedMenu = selectedMenu;
+
+  $("servedDrink").textContent = servedMenu.emoji;
+  $("servedDrink").classList.add("show");
+  $("tableLabel").textContent = "YOUR TABLE · ORDER SERVED";
+  $("status").textContent =
+    "주문이 도착했습니다. 음료를 클릭해 천천히 살펴보세요.";
+
+  closePopup("storyOverlay");
+});
+
+$("servedDrink").addEventListener("click", () => {
+  if (!servedMenu) return;
+
+  $("drinkTitle").textContent = servedMenu.name;
+  $("drinkDescription").textContent = servedMenu.scent;
+  $("mysteryText").textContent = servedMenu.mystery;
+  $("mysteryText").classList.remove("show");
+  $("noiseButton").textContent =
+    "░▒▓ SIGNAL LOST ▓▒░\nCLICK TO RECONNECT";
+
+  openPopup("drinkOverlay");
+});
+
+$("noiseButton").addEventListener("click", () => {
+  $("mysteryText").classList.toggle("show");
+
+  if ($("mysteryText").classList.contains("show")) {
+    $("noiseButton").textContent =
+      "▓▒░ SIGNAL RESTORED? ░▒▓";
+  } else {
+    $("noiseButton").textContent =
+      "░▒▓ SIGNAL LOST ▓▒░\nCLICK TO RECONNECT";
+  }
+});
+
+$("cat").addEventListener("click", () => {
+  openPopup("catOverlay");
+});
+</script>
 </body>
 </html>
