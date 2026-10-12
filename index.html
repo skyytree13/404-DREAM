@@ -1,11 +1,10 @@
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404DREAM</title>
+<title>404DREAM — A Dream by SkyTree</title>
 
 <style>
 * {
@@ -18,197 +17,320 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  color: #f1edff;
-  font-family: "Courier New", monospace;
+  padding: 24px 14px;
+  color: #e8e4ff;
+  font-family: Georgia, "Noto Serif KR", serif;
   background:
-    radial-gradient(ellipse at 20% 15%, #292456, transparent 40%),
-    radial-gradient(ellipse at 80% 85%, #18365e, transparent 40%),
-    #101329;
-  overflow: hidden;
-}
-
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, #e4dcff 1px, transparent 1.5px),
-    radial-gradient(circle, #7f9eea 1px, transparent 1.5px);
-  background-size: 97px 103px, 151px 139px;
-  background-position: 12px 8px, 51px 72px;
-  opacity: 0.5;
+    radial-gradient(ellipse at 50% 10%, #393363 0%, transparent 55%),
+    radial-gradient(ellipse at bottom, #25234c, #101225 75%);
 }
 
 .window {
-  position: relative;
   width: 100%;
   max-width: 560px;
-  background: #1b1b38;
-  border: 2px solid #a39ae7;
-  border-radius: 6px;
-  box-shadow: 0 0 35px #8174e844;
-  overflow: hidden;
-  animation: appear 0.7s ease-out;
+  border: 1px solid #8e82d8;
+  background: rgba(19, 20, 43, 0.97);
+  box-shadow: 0 0 35px #7466d044;
 }
 
 .titlebar {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: linear-gradient(90deg, #7468b8, #484e91);
-  border-bottom: 2px solid #a39ae7;
-  font-size: 12px;
+  justify-content: space-between;
+  padding: 10px 13px;
+  background: linear-gradient(90deg, #554b91, #8270bd);
+  color: white;
+  font: 12px monospace;
 }
 
-.controls {
-  margin-left: auto;
-  letter-spacing: 4px;
-}
-
-.content {
-  padding: 42px 22px 28px;
+.main {
+  padding: 34px 22px;
   text-align: center;
 }
 
 .small {
-  color: #aaa3e6;
-  font-size: 10px;
-  letter-spacing: 3px;
+  color: #aaa2df;
+  font: 12px monospace;
+  letter-spacing: 2px;
 }
 
 h1 {
-  margin: 18px 0 12px;
-  font-size: clamp(38px, 10vw, 68px);
-  letter-spacing: -4px;
-  overflow-wrap: anywhere;
-  text-shadow: 3px 3px 0 #554a9c;
+  margin: 22px 0 8px;
+  font-size: clamp(38px, 10vw, 58px);
+  letter-spacing: 5px;
+  color: #f0edff;
+  text-shadow: 0 0 20px #9282ff77;
 }
 
 .subtitle {
-  color: #cfc7ff;
-  font-size: 12px;
+  color: #a9a4d4;
+  font-size: 13px;
 }
 
 .line {
-  height: 1px;
-  margin: 28px 0 20px;
-  background: linear-gradient(90deg, transparent, #514a7d, transparent);
+  width: 70%;
+  margin: 27px auto;
+  border: 0;
+  border-top: 1px solid #454168;
 }
 
-.message {
-  min-height: 20px;
-  color: #c3bfdc;
-  font-size: 12px;
-  line-height: 1.8;
+.tagline {
+  font-size: 14px;
+  line-height: 2;
+  color: #d5d0f0;
 }
 
 button {
-  width: 100%;
-  max-width: 270px;
-  margin-top: 15px;
-  padding: 15px 10px;
-  color: #f7f4ff;
-  background: linear-gradient(#554b91, #353260);
-  border: 1px solid #a99eff;
   font-family: inherit;
-  font-size: 12px;
   cursor: pointer;
-  box-shadow: 3px 3px 0 #101329;
 }
 
-button:active {
-  transform: translate(2px, 2px);
+.enter-button,
+.choice,
+.next-button {
+  display: block;
+  width: 100%;
+  padding: 14px 12px;
+  color: #f3efff;
+  background: #292644;
+  border: 1px solid #665c9d;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.enter-button,
+.next-button {
+  max-width: 320px;
+  margin: 24px auto 0;
+  background: #39335f;
+  border-color: #a69ae8;
+  font: 12px monospace;
+  letter-spacing: 1px;
+}
+
+.enter-button:hover,
+.choice:hover,
+.next-button:hover {
+  background: #514582;
+  box-shadow: 0 0 16px #8d7cff44;
+}
+
+.status,
+.footer {
+  color: #8580ac;
+  font: 10px monospace;
+  line-height: 2;
 }
 
 .status {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 28px;
-  color: #8e88c3;
-  font-size: 10px;
+  margin-top: 24px;
 }
 
 .footer {
-  position: relative;
+  margin-top: 24px;
+}
+
+#dialogue {
+  display: none;
+  text-align: left;
+}
+
+.owner-label {
+  margin: 20px 0 12px;
+  color: #bcb2ff;
+  font: 11px monospace;
+  letter-spacing: 1px;
+}
+
+.noise {
+  background: repeating-linear-gradient(
+    90deg,
+    #a59ae9 0px,
+    #a59ae9 3px,
+    #393452 3px,
+    #393452 5px
+  );
+  color: #bcb4ff;
+  letter-spacing: 3px;
+}
+
+.speech {
+  padding: 18px 16px;
+  border: 1px solid #46416e;
+  background: #1e1d39;
+  font-size: 15px;
+  line-height: 2;
+  word-break: keep-all;
+}
+
+.speech p {
+  margin: 0 0 8px;
+}
+
+.speech p:last-child {
+  margin-bottom: 0;
+}
+
+#choices {
+  display: grid;
+  gap: 10px;
   margin-top: 18px;
-  color: #77739e;
-  text-align: center;
-  font-size: 10px;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.choice {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
+.choice:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+#reply,
+#farewell {
+  display: none;
+  margin-top: 18px;
+}
+
+#farewell .speech {
+  margin-top: 12px;
+}
+
+@media (max-width: 400px) {
+  .main {
+    padding: 28px 16px;
+  }
+
+  .speech {
+    font-size: 14px;
   }
 }
 </style>
 </head>
 
 <body>
-<div class="stars"></div>
 
-<main>
-  <section class="window">
-    <header class="titlebar">
-      <span>✦</span>
-      <span>404DREAM.exe</span>
-      <span class="controls">－ □ ×</span>
-    </header>
+<div class="window">
+  <div class="titlebar">
+    <span>404DREAM.exe</span>
+    <span>_ □ ×</span>
+  </div>
 
-    <div class="content">
-      <p class="small">A PLACE BETWEEN DREAMS</p>
+  <main class="main">
 
+    <!-- 첫 화면 -->
+    <section id="home">
+      <p class="small">WELCOME, DREAMER.</p>
       <h1>404DREAM</h1>
-
       <p class="subtitle">A Dream by SkyTree</p>
 
-      <div class="line"></div>
+      <hr class="line">
 
-      <p class="message" id="message">
-        A little world between dreams and reality.
+      <p class="tagline">
+        A little world between dreams and reality.<br>
+        꿈과 현실 사이, 아주 작은 세계.
       </p>
 
-      <button id="enterButton" onclick="enterShop()">
+      <button class="enter-button" onclick="openDialogue()">
         [ ENTER THE SHOP ]
       </button>
 
       <div class="status">
-        <span>SYSTEM: <span id="status">WAITING</span>_</span>
-        <span>VISITORS: 000404</span>
+        SYSTEM: WAITING...<br>
+        VISITORS: 000404
       </div>
-    </div>
-  </section>
 
-  <p class="footer">
-    PLEASE DO NOT LOOK FOR THE OWNER'S NAME.
-  </p>
-</main>
+      <div class="footer">
+        PLEASE DO NOT LOOK FOR THE OWNER'S NAME.
+      </div>
+    </section>
+
+    <!-- 주인과의 대화 -->
+    <section id="dialogue">
+      <p class="small">INCOMING MESSAGE...</p>
+
+      <div class="owner-label">
+        OWNER · <span class="noise">▓▓▓▓▓</span>
+      </div>
+
+      <div class="speech" id="greeting">
+        <p>“어서 오세요.”</p>
+        <p>“오늘 힘드셨나봐요. 괜찮으세요?”</p>
+      </div>
+
+      <!-- 손님의 선택지 -->
+      <div id="choices">
+        <button class="choice" onclick="selectAnswer(0)">
+          ① 네, 조금 지쳤어요.
+        </button>
+
+        <button class="choice" onclick="selectAnswer(1)">
+          ② 여기가 어디죠?
+        </button>
+
+        <button class="choice" onclick="selectAnswer(2)">
+          ③ …… .
+        </button>
+
+        <button class="choice" onclick="selectAnswer(3)">
+          ④ 저 사람들은 누구예요?
+        </button>
+      </div>
+
+      <!-- 선택에 따른 주인의 답변 -->
+      <div id="reply" class="speech" aria-live="polite"></div>
+
+      <!-- 마지막 안내 -->
+      <div id="farewell">
+        <div class="speech">
+          <p>“들어오셔서, 드시고 싶은 메뉴 주문해주세요.”</p>
+          <p>“행복하게 해드릴 자신 있으니까요!”</p>
+        </div>
+
+        <button class="next-button" onclick="goToMenu()">
+          [ 가게 안으로 들어가기 ]
+        </button>
+      </div>
+
+      <div class="footer">
+        SYSTEM: WAITING FOR YOUR RESPONSE...
+      </div>
+    </section>
+
+  </main>
+</div>
 
 <script>
-function enterShop() {
-  document.getElementById("message").textContent =
-    "문이 열려 있습니다. 천천히 들어오세요.";
+function openDialogue() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("dialogue").style.display = "block";
+}
 
-  document.getElementById("status").textContent =
-    "WAITING FOR YOU";
+const answers = [
+  "그렇군요. 그럼 오늘은 조금 쉬어 가세요.",
+  "글쎄요. 지도를 드릴 수 있는 곳은 아니거든요.",
+  "괜찮아요. 대답하지 않으셔도 돼요.",
+  "손님들이에요. 다들 저마다의 이유로 찾아오셨죠."
+];
 
-  document.getElementById("enterButton").textContent =
-    "[ THE SHOP IS NOT READY YET ]";
+function selectAnswer(index) {
+  const choices = document.querySelectorAll(".choice");
+  const reply = document.getElementById("reply");
+
+  reply.textContent = "“" + answers[index] + "”";
+  reply.style.display = "block";
+
+  choices.forEach(function(button) {
+    button.disabled = true;
+  });
+
+  document.getElementById("farewell").style.display = "block";
+}
+
+function goToMenu() {
+  window.location.href = "menu.html";
 }
 </script>
+
 </body>
 </html>
