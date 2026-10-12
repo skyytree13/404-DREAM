@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404DREAM | MENU</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 16px;
+  color: #e5e2ff;
+  font-family: Georgia, serif;
+  background: radial-gradient(ellipse at top, #343064, #111329 70%);
+}
+
+.window {
+  max-width: 650px;
+  margin: 30px auto;
+  border: 1px solid #a49aff;
+  background: #17172b;
+  box-shadow: 0 0 25px #7566db44;
+}
+
+.bar {
+  padding: 10px 14px;
+  background: #6557a7;
+  color: white;
+  font: 13px monospace;
+}
+
+.content {
+  padding: 28px 22px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 38px;
+  letter-spacing: 5px;
+}
+
+.subtitle {
+  color: #aaa5d9;
+  font-size: 13px;
+}
+
+.notice {
+  margin: 25px 0;
+  color: #b9b4dd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 18px;
+  color: #f0edff;
+  text-align: left;
+  font: inherit;
+  background: #252442;
+  border: 1px solid #655b9c;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #37315e;
+  border-color: #c4b9ff;
+}
+
+.menu-item strong {
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.menu-item span {
+  color: #bcb6dc;
+  font-size: 13px;
+}
+
+#message {
+  min-height: 50px;
+  margin-top: 22px;
+  color: #d5ccff;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+a {
+  color: #c9c1ff;
+  font: 13px monospace;
+}
+</style>
+</head>
+<body>
+
+<div class="window">
+  <div class="bar">404DREAM.exe — MENU</div>
+
+  <div class="content">
+    <p class="subtitle">WELCOME, DREAMER.</p>
+    <h1>MENU</h1>
+    <p class="subtitle">오늘 밤, 무엇을 주문하시겠어요?</p>
+
+    <div class="notice">
+      모든 메뉴는 따뜻하게 준비됩니다.<br>
+      단, 주문자의 기억은 보관되지 않습니다.
+    </div>
+
+    <button class="menu-item" onclick="choose('soda')">
+      <strong>✦ STAR NIGHT SODA</strong>
+      <span>별 모양 레몬 한 조각과 푸른 밤을 담은 소다.</span>
+    </button>
+
+    <button class="menu-item" onclick="choose('parfait')">
+      <strong>✦ DREAM PARFAIT</strong>
+      <span>달콤한 기억을 층층이 쌓아 올린 파르페.</span>
+    </button>
+
+    <button class="menu-item" onclick="choose('tea')">
+      <strong>✦ MOONLIGHT TEA</strong>
+      <span>오래된 꿈처럼 은은한 향이 남는 차.</span>
+    </button>
+
+    <div id="message">
+      SYSTEM: 메뉴를 선택해 주세요.
+    </div>
+
+    <p><a href="index.html">← BACK TO THE ENTRANCE</a></p>
+  </div>
+</div>
+
+<script>
+function choose(menu) {
+  const message = document.getElementById("message");
+
+  if (menu === "soda") {
+    message.textContent =
+      "STAR NIGHT SODA — 오늘의 레몬은 별 모양입니다. 누군가 좋아했던 모양이거든요.";
+  } else if (menu === "parfait") {
+    message.textContent =
+      "DREAM PARFAIT — 토핑을 고르실 수 있어요. 어떤 이야기를 찾고 계신가요?";
+  } else {
+    message.textContent =
+      "MOONLIGHT TEA — 이 차를 마시면 꿈을 기억할 수 있을까요?";
+  }
+}
+</script>
+
+</body>
+</html>
