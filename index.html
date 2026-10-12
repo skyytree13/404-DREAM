@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404DREAM</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #f1edff;
+  font-family: "Courier New", monospace;
+  background:
+    radial-gradient(ellipse at 20% 15%, #292456, transparent 40%),
+    radial-gradient(ellipse at 80% 85%, #18365e, transparent 40%),
+    #101329;
+  overflow: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #e4dcff 1px, transparent 1.5px),
+    radial-gradient(circle, #7f9eea 1px, transparent 1.5px);
+  background-size: 97px 103px, 151px 139px;
+  background-position: 12px 8px, 51px 72px;
+  opacity: 0.5;
+}
+
+.window {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  background: #1b1b38;
+  border: 2px solid #a39ae7;
+  border-radius: 6px;
+  box-shadow: 0 0 35px #8174e844;
+  overflow: hidden;
+  animation: appear 0.7s ease-out;
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(90deg, #7468b8, #484e91);
+  border-bottom: 2px solid #a39ae7;
+  font-size: 12px;
+}
+
+.controls {
+  margin-left: auto;
+  letter-spacing: 4px;
+}
+
+.content {
+  padding: 42px 22px 28px;
+  text-align: center;
+}
+
+.small {
+  color: #aaa3e6;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(38px, 10vw, 68px);
+  letter-spacing: -4px;
+  overflow-wrap: anywhere;
+  text-shadow: 3px 3px 0 #554a9c;
+}
+
+.subtitle {
+  color: #cfc7ff;
+  font-size: 12px;
+}
+
+.line {
+  height: 1px;
+  margin: 28px 0 20px;
+  background: linear-gradient(90deg, transparent, #514a7d, transparent);
+}
+
+.message {
+  min-height: 20px;
+  color: #c3bfdc;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+button {
+  width: 100%;
+  max-width: 270px;
+  margin-top: 15px;
+  padding: 15px 10px;
+  color: #f7f4ff;
+  background: linear-gradient(#554b91, #353260);
+  border: 1px solid #a99eff;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #101329;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 28px;
+  color: #8e88c3;
+  font-size: 10px;
+}
+
+.footer {
+  position: relative;
+  margin-top: 18px;
+  color: #77739e;
+  text-align: center;
+  font-size: 10px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<main>
+  <section class="window">
+    <header class="titlebar">
+      <span>✦</span>
+      <span>404DREAM.exe</span>
+      <span class="controls">－ □ ×</span>
+    </header>
+
+    <div class="content">
+      <p class="small">A PLACE BETWEEN DREAMS</p>
+
+      <h1>404DREAM</h1>
+
+      <p class="subtitle">A Dream by SkyTree</p>
+
+      <div class="line"></div>
+
+      <p class="message" id="message">
+        A little world between dreams and reality.
+      </p>
+
+      <button id="enterButton" onclick="enterShop()">
+        [ ENTER THE SHOP ]
+      </button>
+
+      <div class="status">
+        <span>SYSTEM: <span id="status">WAITING</span>_</span>
+        <span>VISITORS: 000404</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="footer">
+    PLEASE DO NOT LOOK FOR THE OWNER'S NAME.
+  </p>
+</main>
+
+<script>
+function enterShop() {
+  document.getElementById("message").textContent =
+    "문이 열려 있습니다. 천천히 들어오세요.";
+
+  document.getElementById("status").textContent =
+    "WAITING FOR YOU";
+
+  document.getElementById("enterButton").textContent =
+    "[ THE SHOP IS NOT READY YET ]";
+}
+</script>
+</body>
+</html>
