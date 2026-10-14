@@ -40,193 +40,193 @@
       cursor: pointer;
     }
 
-    button:focus-visible,
-    a:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-    }
-
     .computer {
       width: min(100%, 760px);
       margin: 0 auto;
       overflow: hidden;
-      border: 2px solid var(--line);
-      border-radius: 8px;
-      background: #0d0e20;
-      box-shadow:
-        0 0 0 5px #252344,
-        0 0 36px #8b7bff25;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      box-shadow: 0 0 35px #8274e822;
     }
 
     .titlebar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      padding: 12px 15px;
-      color: #fff;
-      background: linear-gradient(90deg, #554b91, #292749);
-      border-bottom: 2px solid #7770b8;
+      padding: 12px 16px;
+      background: #29264b;
+      border-bottom: 1px solid var(--line);
+      color: var(--lavender);
       font-size: 13px;
     }
 
-    .lights {
-      color: var(--gold);
+    .window-buttons {
       letter-spacing: 5px;
+      color: var(--pink);
       white-space: nowrap;
     }
 
     .screen {
-      padding: clamp(20px, 5vw, 38px);
+      padding: clamp(22px, 6vw, 48px);
       text-align: center;
     }
 
     .tiny-label {
-      color: #b9b0f5;
-      font-size: 11px;
+      color: var(--purple);
+      font-size: 12px;
       letter-spacing: 3px;
     }
 
+    .stars {
+      color: var(--gold);
+      letter-spacing: 9px;
+      margin: 22px 0;
+    }
+
     h1 {
-      margin: 12px 0 2px;
-      color: #e3d5ff;
-      font-size: clamp(38px, 10vw, 66px);
-      letter-spacing: 4px;
-      text-shadow: 0 0 20px #9d8cff80;
+      margin: 10px 0;
+      color: var(--lavender);
+      font-size: clamp(40px, 10vw, 76px);
+      line-height: 1.1;
+      letter-spacing: 5px;
+      text-shadow: 3px 3px 0 #51457d, 0 0 25px #a99aff66;
     }
 
     .subtitle {
-      margin: 8px 0;
-      color: #bcb6e5;
-      font-size: 13px;
+      color: var(--pink);
+      font-size: 14px;
       letter-spacing: 2px;
     }
 
-    .divider {
-      width: 70%;
-      height: 1px;
-      margin: 24px auto;
-      background: linear-gradient(90deg, transparent, #8278bd, transparent);
-    }
-
     .tagline {
-      color: #eee4ff;
+      margin: 28px 0;
       line-height: 2;
-      font-size: 15px;
+      color: #d5d0f0;
+      font-size: 14px;
     }
 
-    .tagline small {
-      color: #aaa4d1;
-      font-size: 12px;
+    .pixel-line {
+      height: 1px;
+      margin: 26px 0;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
     }
 
-    .primary-button,
+    .main-button,
     .choice-button,
     .back-button {
-      border: 1px solid #a49be1;
+      border: 1px solid var(--line);
       border-radius: 4px;
-      color: #f7f0ff;
-      background: #29264b;
-      transition: background .2s, transform .2s, border-color .2s;
+      color: var(--white);
+      background: #302a58;
+      transition: background .2s, transform .2s;
     }
 
-    .primary-button:hover,
+    .main-button {
+      padding: 14px 24px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .main-button:hover,
     .choice-button:hover,
     .back-button:hover {
-      background: #494074;
-      border-color: var(--gold);
+      background: #51437c;
       transform: translateY(-2px);
     }
 
-    .primary-button {
-      margin-top: 22px;
-      padding: 13px 24px;
-      color: #fff0c7;
-      letter-spacing: 1px;
+    .visitor-count {
+      margin-top: 26px;
+      color: #8983b6;
+      font-size: 11px;
+      letter-spacing: 2px;
     }
 
-    .visitor {
-      margin-top: 25px;
-      color: #8d8ab2;
-      font: 11px monospace;
-    }
-
-    .footer-note {
-      margin-top: 28px;
-      color: #777491;
-      font-size: 10px;
-      letter-spacing: 1px;
+    .warning {
+      margin-top: 24px;
+      color: #a6a0ca;
+      font-size: 11px;
+      line-height: 1.8;
     }
 
     .hidden {
       display: none !important;
     }
 
-    /* 주인과의 대화 화면 */
+    .shop-screen {
+      padding: 24px clamp(16px, 5vw, 38px) 36px;
+    }
+
+    .shop-heading {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
 
     .owner-label {
-      margin: 0 0 12px;
-      color: #c9b8ff;
-      font: 12px monospace;
+      margin: 10px 0;
+      color: var(--lavender);
+      font-size: 13px;
       letter-spacing: 2px;
     }
 
     .noise {
-      color: #e7d9ff;
-      animation: glitch 3s infinite;
-    }
-
-    @keyframes glitch {
-      0%, 90%, 100% { opacity: 1; }
-      92% { opacity: .45; text-shadow: 2px 0 #ff9fe8; }
-      94% { opacity: .9; text-shadow: -2px 0 #9beaff; }
-      96% { opacity: .55; }
+      display: inline-block;
+      color: var(--pink);
+      background: repeating-linear-gradient(
+        0deg,
+        #b6a6e7 0px,
+        #b6a6e7 2px,
+        #292143 2px,
+        #292143 4px
+      );
+      user-select: none;
     }
 
     .owner-picture {
-      width: 100%;
-      max-width: 420px;
-      margin: 0 auto 12px;
-      padding: 8px;
+      margin: 18px auto 12px;
+      width: min(100%, 390px);
       overflow: hidden;
-      border: 1px solid #625a98;
-      border-radius: 6px;
+      border: 1px solid #7770b855;
+      border-radius: 8px;
       background: #101126;
-      box-shadow: 0 0 24px #9a83ff20;
+      box-shadow: 0 0 28px #a99aff1c;
     }
 
     .owner-picture img {
       display: block;
       width: 100%;
       height: auto;
-      image-rendering: pixelated;
     }
 
     .image-caption {
-      margin: 8px 0 20px;
-      color: #9994c6;
+      color: #9e96c9;
       font-size: 10px;
       letter-spacing: 1px;
+      overflow-wrap: anywhere;
     }
 
     .dialogue-box {
-      padding: 20px 17px;
-      border: 1px solid #5e578f;
-      border-radius: 5px;
-      background: linear-gradient(135deg, #201e40, #15162d);
+      margin-top: 28px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #101126aa;
       text-align: left;
     }
 
     .speaker {
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       color: var(--gold);
       font-size: 12px;
+      letter-spacing: 2px;
     }
 
     .dialogue-text {
       min-height: 64px;
       margin: 0;
-      color: #f1ecff;
+      color: var(--white);
       font-size: 15px;
       line-height: 2;
       white-space: pre-line;
@@ -234,16 +234,16 @@
 
     .choices {
       display: grid;
-      gap: 9px;
-      margin-top: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .choice-button {
-      width: 100%;
-      padding: 12px 14px;
+      min-height: 52px;
+      padding: 12px;
       text-align: left;
       font-size: 13px;
-      line-height: 1.7;
     }
 
     .choice-button::before {
@@ -251,54 +251,41 @@
       color: var(--gold);
     }
 
-    .choice-button:disabled {
-      opacity: .45;
-      cursor: default;
-      transform: none;
-    }
-
-    .next-area {
-      margin-top: 18px;
+    .after-dialogue {
+      margin-top: 24px;
       text-align: center;
     }
 
-    .next-area .primary-button {
-      margin-top: 0;
+    .after-dialogue p {
+      color: #d8d1f3;
+      font-size: 14px;
+      line-height: 2;
     }
 
-    .system-note {
-      margin-top: 22px;
-      color: #7f7aab;
-      font: 10px monospace;
-      line-height: 1.8;
+    .footer {
+      padding: 14px;
+      border-top: 1px solid #7770b844;
+      color: #8d86b8;
+      font-size: 10px;
+      text-align: center;
+      letter-spacing: 1px;
     }
 
-    .bottom-line {
-      height: 4px;
-      background: repeating-linear-gradient(
-        90deg,
-        #a99aff 0 12px,
-        #3d3869 12px 24px,
-        #f4c9e8 24px 28px,
-        #17172e 28px 40px
-      );
-    }
-
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       body {
-        padding: 17px 10px;
+        padding: 10px 6px;
+      }
+
+      .choices {
+        grid-template-columns: 1fr;
       }
 
       .screen {
-        padding: 22px 15px;
+        padding: 26px 18px;
       }
 
-      .owner-picture {
-        max-width: 340px;
-      }
-
-      .dialogue-box {
-        padding: 16px 13px;
+      .shop-screen {
+        padding: 22px 14px 28px;
       }
     }
   </style>
@@ -307,45 +294,44 @@
 <body>
   <main class="computer">
     <header class="titlebar">
-      <span>✦ 404DREAM.exe</span>
-      <span class="lights">● ● ●</span>
+      <span>◈ 404DREAM.exe</span>
+      <span class="window-buttons">＿ □ ×</span>
     </header>
 
     <!-- 첫 화면 -->
     <section class="screen" id="home">
-      <div class="tiny-label">UNKNOWN LOCATION · 00:04 AM</div>
+      <p class="tiny-label">UNKNOWN LOCATION · 00:404 AM</p>
+
+      <div class="stars">✦ · ˚ ✧ · ✦</div>
 
       <h1>404DREAM</h1>
       <p class="subtitle">A Dream by SkyTree</p>
 
-      <div class="divider"></div>
+      <div class="pixel-line"></div>
 
       <p class="tagline">
-        A little world between dreams and reality.
-        <br>
-        <small>꿈과 현실 사이, 잠시 머물다 가는 곳.</small>
-      </p>
-
-      <p style="color:#c7baff; font-size:13px; margin-top:25px;">
+        A little world between dreams and reality.<br>
+        꿈과 현실 사이, 작은 세계.<br><br>
         당신은 이곳에 어떻게 오셨나요?
       </p>
 
-      <button class="primary-button" id="enterButton">
+      <button class="main-button" id="enterButton">
         [ ENTER THE SHOP ]
       </button>
 
-      <div class="visitor">VISITORS: 000404</div>
+      <p class="visitor-count">VISITORS: 000404</p>
 
-      <p class="footer-note">
-        PLEASE DO NOT LOOK FOR THE OWNER'S NAME.
+      <p class="warning">
+        PLEASE DO NOT LOOK FOR THE OWNER'S NAME.<br>
+        주인의 이름을 찾으려 하지 마세요.
       </p>
     </section>
 
     <!-- 주인과의 대화 -->
-    <section class="screen hidden" id="conversation">
-      <div class="tiny-label">CONNECTION ESTABLISHED...</div>
+    <section class="shop-screen hidden" id="shop">
+      <p class="shop-heading">WELCOME TO THE DREAM</p>
 
-      <div class="divider"></div>
+      <div class="stars">✧ ˚ · ☾ · ˚ ✧</div>
 
       <p class="owner-label">
         OWNER · <span class="noise">▓▓▓▓▓▓</span>
@@ -353,7 +339,7 @@
 
       <figure class="owner-picture">
         <img
-          src="owner.png"
+          src="file_000000005f7881fb82f973b750f3b793.jpg"
           alt="별 장식과 긴 보라색 머리를 가진 404DREAM의 주인"
         >
       </figure>
@@ -366,9 +352,8 @@
         <div class="speaker">주인</div>
 
         <p class="dialogue-text" id="dialogue">
-          어서 오세요.
-          오늘 힘드셨나 봐요. 괜찮으세요?
-        </p>
+어서 오세요.
+오늘 힘드셨나 봐요. 괜찮으세요?</p>
 
         <div class="choices" id="choices">
           <button class="choice-button" data-answer="tired">
@@ -387,63 +372,81 @@
             저 사람들은 누구예요?
           </button>
         </div>
-
-        <div class="next-area hidden" id="nextArea">
-          <button class="primary-button" id="nextButton">
-            [ 가게 안으로 들어가기 ]
-          </button>
-        </div>
       </div>
 
-      <p class="system-note">
-        CONNECTION: STABLE<br>
-        OWNER DATA: ████████<br>
-        PLEASE ENJOY YOUR STAY.
-      </p>
+      <div class="after-dialogue hidden" id="afterDialogue">
+        <p>
+          들어오셔서, 드시고 싶은 메뉴를 주문해주세요.<br>
+          행복하게 해드릴 자신 있으니까요!
+        </p>
+
+        <div class="stars">✦ ✧ ✦</div>
+
+        <button class="main-button" id="menuButton">
+          [ 가게 안으로 들어가기 ]
+        </button>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <button class="back-button" id="backButton"
+          style="padding: 9px 14px; font-size: 12px;">
+          ← 처음으로
+        </button>
+      </div>
     </section>
 
-    <div class="bottom-line"></div>
+    <footer class="footer">
+      DREAM NOT FOUND · CONNECTION UNSTABLE
+    </footer>
   </main>
 
   <script>
-    const home = document.getElementById("home");
-    const conversation = document.getElementById("conversation");
-    const enterButton = document.getElementById("enterButton");
-    const dialogue = document.getElementById("dialogue");
-    const choices = document.getElementById("choices");
-    const nextArea = document.getElementById("nextArea");
-    const nextButton = document.getElementById("nextButton");
+    const home = document.getElementById('home');
+    const shop = document.getElementById('shop');
+    const enterButton = document.getElementById('enterButton');
+    const backButton = document.getElementById('backButton');
+    const menuButton = document.getElementById('menuButton');
+    const dialogue = document.getElementById('dialogue');
+    const choices = document.getElementById('choices');
+    const afterDialogue = document.getElementById('afterDialogue');
 
     const responses = {
-      tired: "그렇군요. 그럼 오늘은 조금 쉬어 가세요.",
-      where: "글쎄요. 지도를 드릴 수 있는 곳은 아니거든요.",
-      silence: "괜찮아요. 대답하지 않으셔도 돼요.",
-      people: "손님들이에요. 다들 저마다의 이유로 찾아오셨죠."
+      tired: '그렇군요. 그럼 오늘은 조금 쉬어 가세요.',
+      where: '글쎄요. 지도를 드릴 수 있는 곳은 아니거든요.',
+      silence: '괜찮아요. 대답하지 않으셔도 돼요.',
+      people: '손님들이에요. 다들 저마다의 이유로 찾아오셨죠.'
     };
 
-    enterButton.addEventListener("click", () => {
-      home.classList.add("hidden");
-      conversation.classList.remove("hidden");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    enterButton.addEventListener('click', () => {
+      home.classList.add('hidden');
+      shop.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    choices.addEventListener("click", (event) => {
-      const button = event.target.closest("button[data-answer]");
-
+    choices.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-answer]');
       if (!button) return;
 
       const answer = button.dataset.answer;
+      dialogue.textContent = responses[answer];
 
-      dialogue.textContent =
-        responses[answer] +
-        "\n\n어서 들어오세요. 드시고 싶은 메뉴를 주문해 주세요.\n행복하게 해드릴 자신 있으니까요!";
-
-      choices.classList.add("hidden");
-      nextArea.classList.remove("hidden");
+      choices.classList.add('hidden');
+      afterDialogue.classList.remove('hidden');
     });
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "menu.html";
+    menuButton.addEventListener('click', () => {
+      window.location.href = 'menu.html';
+    });
+
+    backButton.addEventListener('click', () => {
+      shop.classList.add('hidden');
+      home.classList.remove('hidden');
+      dialogue.textContent =
+        '어서 오세요.\n오늘 힘드셨나 봐요. 괜찮으세요?';
+
+      choices.classList.remove('hidden');
+      afterDialogue.classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
